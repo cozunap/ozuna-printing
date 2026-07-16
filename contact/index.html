@@ -260,41 +260,86 @@ One print at a time.</h2>				</div>
 		<div class="elementor-element elementor-element-785f275 e-con-full e-flex e-con e-child" data-id="785f275" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 				<div class="elementor-element elementor-element-9e5ef81 elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="9e5ef81" data-element_type="widget" data-e-type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
 				<div class="elementor-widget-container">
-							<form class="elementor-form" method="post" name="New Form" aria-label="New Form">
-			<input type="hidden" name="post_id" value="104">
-			<input type="hidden" name="form_id" value="9e5ef81">
-			<input type="hidden" name="referer_title" value="Contact">
+							
+<style>
+.native-form { max-width: 600px; margin: 0 auto; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.native-form .form-group { margin-bottom: 20px; }
+.native-form label { display: block; font-family: 'Inter', sans-serif; font-weight: 600; color: #0d1f3c; margin-bottom: 8px; }
+.native-form input, .native-form select, .native-form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Inter', sans-serif; }
+.native-form input:focus, .native-form select:focus, .native-form textarea:focus { border-color: #ffd100; outline: none; }
+.native-form button { background-color: #0d1f3c; color: #fff; padding: 15px 30px; border: none; border-radius: 4px; font-family: 'Inter', sans-serif; font-weight: 700; cursor: pointer; transition: background 0.3s; width: 100%; font-size: 1.1rem; }
+.native-form button:hover { background-color: #ffd100; color: #0d1f3c; }
+#form-message { display: none; margin-top: 15px; padding: 10px; border-radius: 4px; font-weight: 600; text-align: center; }
+.success-msg { background: #d4edda; color: #155724; }
+.error-msg { background: #f8d7da; color: #721c24; }
+</style>
+<form class="native-form" id="contact-form">
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service">
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Business Cards">Custom Business Cards</option>
+            <option value="Large Format Printing">Large Format Printing</option>
+            <option value="Other Printed Products">Other Printed Products</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="message">Project Details *</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+    </div>
+    <button type="submit" id="submit-btn" aria-label="Submit Contact Form">Get a Free Quote</button>
+    <div id="form-message" role="alert" aria-live="assertive"></div>
+</form>
 
-							<input type="hidden" name="queried_id" value="104">
-			
-			<div class="elementor-form-fields-wrapper elementor-labels-above">
-								<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100">
-												<label for="form-field-name" class="elementor-field-label">
-								Name							</label>
-														<input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Name">
-											</div>
-								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
-												<label for="form-field-email" class="elementor-field-label">
-								Email							</label>
-														<input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" placeholder="Email" required="required">
-											</div>
-								<div class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100">
-												<label for="form-field-message" class="elementor-field-label">
-								Message							</label>
-						<textarea class="elementor-field-textual elementor-field  elementor-size-sm" name="form_fields[message]" id="form-field-message" rows="4" placeholder="Message"></textarea>				</div>
-								<div class="elementor-field-type-recaptcha_v3 elementor-field-group elementor-column elementor-field-group-field_006eece elementor-col-100 recaptcha_v3-bottomright">
-					<div class="elementor-field" id="form-field-field_006eece"><div class="elementor-g-recaptcha" data-sitekey="6Lf3NtUcAAAAAKgVLNi1qvaiMglqbFnFJ-uxfvTl" data-type="v3" data-action="Form" data-badge="bottomright" data-size="invisible"></div></div>				</div>
-								<div class="elementor-field-type-text">
-					<input size="1" type="text" name="form_fields[field_06da9e4]" id="form-field-field_06da9e4" class="elementor-field elementor-size-sm " style="display:none !important;">				</div>
-								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-					<button class="elementor-button elementor-size-sm" type="submit">
-						<span class="elementor-button-content-wrapper">
-																						<span class="elementor-button-text">Send</span>
-													</span>
-					</button>
-				</div>
-			</div>
-		</form>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('form-message');
+    btn.innerText = 'Sending...';
+    btn.disabled = true;
+
+    const formData = new FormData(this);
+    fetch('/contact.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        msg.style.display = 'block';
+        if (data.status === 'success') {
+            msg.className = 'success-msg';
+            msg.innerText = data.message;
+            this.reset();
+        } else {
+            msg.className = 'error-msg';
+            msg.innerText = data.message;
+        }
+        btn.innerText = 'Get a Free Quote';
+        btn.disabled = false;
+    })
+    .catch(error => {
+        msg.style.display = 'block';
+        msg.className = 'error-msg';
+        msg.innerText = 'Network error. Please try again later.';
+        btn.innerText = 'Get a Free Quote';
+        btn.disabled = false;
+    });
+});
+</script>
+
 						</div>
 				</div>
 				</div>
