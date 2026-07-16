@@ -71,4 +71,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Trigger any Elementor re-init events if necessary, though pure HTML/CSS should work out of the box
     window.dispatchEvent(new Event('resize'));
+
+    // Custom Scroll to Top Button
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.id = 'custom-scroll-top';
+    // Using SVG for a cleaner, thicker arrow
+    scrollTopBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#ffd100" width="20" height="20"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>`;
+    document.body.appendChild(scrollTopBtn);
+
+    const style = document.createElement('style');
+    style.textContent = `
+        #custom-scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #000000;
+            border: 2px solid #000000;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        #custom-scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #custom-scroll-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+        }
+    `;
+    document.head.appendChild(style);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
 });
