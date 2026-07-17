@@ -255,13 +255,56 @@ leith: auto;
 				</div>
 								</div>
 				</div>
-				<div class="elementor-element elementor-element-93f899a elementor--h-position-center elementor--v-position-middle elementor-widget elementor-widget-slides" data-id="93f899a" data-element_type="widget" data-e-type="widget" data-settings="{&quot;navigation&quot;:&quot;none&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;transition&quot;:&quot;slide&quot;,&quot;transition_speed&quot;:500}" data-widget_type="slides.default">
-				<div class="elementor-widget-container">
-									<div class="elementor-swiper">
-					<div class="elementor-slides-wrapper elementor-main-swiper swiper" role="region" aria-roledescription="carousel" aria-label="Slides" dir="ltr" data-animation="fadeInUp">
-				<div class="swiper-wrapper elementor-slides">
-										<div class="elementor-repeater-item-6ac6de0 swiper-slide" role="group" aria-roledescription="slide"><div class="swiper-slide-bg" role="img" aria-label="Slider-2"></div><div class="swiper-slide-inner"><div class="swiper-slide-contents"></div></div></div><div class="elementor-repeater-item-b9c5434 swiper-slide" role="group" aria-roledescription="slide"><div class="swiper-slide-bg" role="img" aria-label="Slider-3"></div><div class="swiper-slide-inner"><div class="swiper-slide-contents"></div></div></div><div class="elementor-repeater-item-8909e38 swiper-slide" role="group" aria-roledescription="slide"><div class="swiper-slide-bg" role="img" aria-label="01-fast-tax"></div><div class="swiper-slide-inner"><div class="swiper-slide-contents"></div></div></div><div class="elementor-repeater-item-6b05dd2 swiper-slide" role="group" aria-roledescription="slide"><div class="swiper-slide-bg" role="img" aria-label="02-money-back"></div><div class="swiper-slide-inner"><div class="swiper-slide-contents"></div></div></div>				</div>
-																					</div>
+				
+<style>
+.seamless-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+.seamless-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+.seamless-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+.seamless-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+</style>
+
+<div class="seamless-slider" id="digital-signage-slider">
+    <div class="seamless-track" id="seamless-track">
+        <div class="seamless-slide"><img src="/assets/images/Slider-3.webp" alt="Digital Signage 1" loading="lazy"></div>
+        <div class="seamless-slide"><img src="/assets/images/Slider-2.webp" alt="Digital Signage 2" loading="lazy"></div>
+        <div class="seamless-slide"><img src="/assets/images/01-fast-tax.webp" alt="Digital Signage 3" loading="lazy"></div>
+        <div class="seamless-slide"><img src="/assets/images/02-money-back.webp" alt="Digital Signage 4" loading="lazy"></div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.getElementById('seamless-track');
+    if (!track) return;
+    const slides = document.querySelectorAll('.seamless-slide');
+    let currentIndex = 0;
+
+    function nextSlide() {
+        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(nextSlide, 4000);
+});
+</script>
+
 				</div>
 								</div>
 				</div>
