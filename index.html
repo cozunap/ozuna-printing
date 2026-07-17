@@ -244,6 +244,52 @@ leith: auto;
 				<div class="elementor-widget-container">
 					<h2 class="elementor-heading-title elementor-size-default">We transform any TV into a digital signage </h2>				</div>
 				</div>
+
+<style>
+.custom-seamless-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.custom-seamless-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.custom-seamless-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+.custom-seamless-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+</style>
+<div class="custom-seamless-slider" id="digital-signage-slider">
+    <div class="custom-seamless-track" id="digital-signage-track">
+        <div class="custom-seamless-slide"><img src="/assets/images/Slider-1.webp" alt="Digital Signage 1" loading="lazy"></div>
+        <div class="custom-seamless-slide"><img src="/assets/images/Slider-2.webp" alt="Digital Signage 2" loading="lazy"></div>
+        <div class="custom-seamless-slide"><img src="/assets/images/Slider-3.webp" alt="Digital Signage 3" loading="lazy"></div>
+        <div class="custom-seamless-slide"><img src="/assets/images/Slider-4.webp" alt="Digital Signage 4" loading="lazy"></div>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('digital-signage-track');
+    let currentIndex = 0;
+    const slideCount = 4;
+    
+    function moveToNextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    setInterval(moveToNextSlide, 4000);
+});
+</script>
+
 				
 				</div>
 		<div class="elementor-element elementor-element-23bad6e e-flex e-con-boxed elementor-invisible e-con e-parent" data-id="23bad6e" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
